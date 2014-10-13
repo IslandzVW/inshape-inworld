@@ -70,6 +70,9 @@ list bikingPowerPercentiles = [1.0, 1.5, 2.4, 4.3, 9.8];
 //power percentiles for rowing (phone in pocket)
 list rowingPowerPercentiles = [0.2, 0.6, 1.0, 1.4, 3.8];
 
+//power percentiles for steppers (need more data)
+list stepperPowerPercentiles = [0.19, 0.32, 0.64, 1.1, 3.7];
+
 
 float lastMessageTime;
 
@@ -114,6 +117,15 @@ ProcessInput(integer exerciseType, float avgMag, float pps)
     {
         powerPercentiles = rowingPowerPercentiles;
         rates = rowingCadenceRates;
+    }
+    else if (exerciseType == EXERCISE_TYPE_STEPPER) 
+    {
+        powerPercentiles = stepperPowerPercentiles;
+        rates = strideRates;
+    }
+    else
+    {
+        if (DEBUG) llOwnerSay("Unknown exercise type" + (string)exerciseType);
     }
     
     integer i;

@@ -28,10 +28,6 @@
 
 integer DEBUG = TRUE;
 
-integer EXERCISE_TYPE_WALKING = 1;
-integer EXERCISE_TYPE_RUNNING = 2;
-integer EXERCISE_TYPE_BIKE = 3;
-
 integer NUM_SPEEDS = 5;
 
 float RUN_SPEED_BEGIN = 0.25;
