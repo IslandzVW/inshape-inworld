@@ -34,6 +34,8 @@ integer COMMAND_CHANNEL = -129;
 integer EXERCISE_TYPE_WALKING = 1;
 integer EXERCISE_TYPE_RUNNING = 2;
 integer EXERCISE_TYPE_BIKE = 3;
+integer EXERCISE_TYPE_ROWING = 4;
+integer EXERCISE_TYPE_STEPPER = 5;
 
 //how much weight we give the stride rate in determining final speed
 float STRIDE_WEIGHT = 0.5;
@@ -95,7 +97,7 @@ ProcessInput(integer exerciseType, float avgMag, float pps)
         powerPercentiles = runningPowerPercentiles;
         rates = strideRates;
     }
-    else if (exerciseType = EXERCISE_TYPE_BIKE)
+    else if (exerciseType == EXERCISE_TYPE_BIKE)
     {
         powerPercentiles = bikingPowerPercentiles;
         rates = cadenceRates;
