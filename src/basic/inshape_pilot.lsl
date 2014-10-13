@@ -46,12 +46,16 @@ integer NUM_SPEEDS = 5;
 
 float IDLE_SECONDS_BEFORE_STOPPING = 5.0;
 float INTERVAL = 1.0;
+
  
 //stride rates for running or walking
 list strideRates = [1.0, 1.5, 2.0, 2.5, 3.0];
 
 //cadence rates for bikes or ellipticals
 list cadenceRates = [0.5, 0.75, 1.0, 1.5, 2.0];
+
+//cadence rates for rowers
+list rowingCadenceRates = [0.25, 0.5, 0.75, 1.0, 1.5];
 
 
 //power percentiles for walking
@@ -62,6 +66,10 @@ list runningPowerPercentiles = [10.0, 21.0, 42.0, 55.0, 70.0];
 
 //power percentiles for biking
 list bikingPowerPercentiles = [1.0, 1.5, 2.4, 4.3, 9.8];
+
+//power percentiles for rowing (phone in pocket)
+list rowingPowerPercentiles = [0.2, 0.6, 1.0, 1.4, 3.8];
+
 
 float lastMessageTime;
 
@@ -101,6 +109,11 @@ ProcessInput(integer exerciseType, float avgMag, float pps)
     {
         powerPercentiles = bikingPowerPercentiles;
         rates = cadenceRates;
+    }
+    else if (exerciseType == EXERCISE_TYPE_ROWING)
+    {
+        powerPercentiles = rowingPowerPercentiles;
+        rates = rowingCadenceRates;
     }
     
     integer i;
