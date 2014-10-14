@@ -42,7 +42,11 @@ list pilotSpeeds = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // Look this up here to get the actual move size
 list levels = [ 0.00, 0.00, 0.00, 0.00, 0.00,               // unknown type
                 0.08, 0.12, 0.16, 0.20, RUN_SPEED_BEGIN,    // walking
-                RUN_SPEED_BEGIN, 0.35, 0.45, 0.55, 0.65 ];  // running
+                RUN_SPEED_BEGIN, 0.35, 0.45, 0.55, 0.65,    // running
+                0.75, 0.8, 0.85, 0.9, 0.95,                 // biking
+                0.08, 0.12, 0.16, 0.20, RUN_SPEED_BEGIN,    // rowing
+                0.08, 0.12, 0.16, 0.20, RUN_SPEED_BEGIN     // stepping
+                ];  
                 
 float current_move = 0.10; // Force first calculation
 float max_turn = 0.05;
