@@ -31,7 +31,7 @@ last sample window
 PULSES_PER_SECOND
 ------------------
 Exercises that InShape supports have cyclical patterns of force. When someone
-is running, the foot impact on the ground produces the greates forces in the app.
+is running, the foot impact on the ground produces the greatest forces in the app.
 Each time a foot hits the ground, a pulse is registered. Similar cyclical
 force patterns appear for biking, rowing, walking, etc.
 
@@ -69,16 +69,8 @@ An example of listening for this data in LSL follows:
 
         listen( integer channel, string name, key id, string message )
         {
-            // If we hear anything then check it is the rider we are hearing
-            // or something owned by them if we are in simulation mode
-            if ((id == rider) || (SIMULATE && (llGetOwnerKey(id) == rider)))
-            {
-                //this is our rider talking on our command channel.
-                //lets decode and make the appropriate changes
-                list params = DecodeParams(message);
+            list params = DecodeParams(message);
 
-                //params is EXERCISE_TYPE|AVG_MAG|PULSES_PER_SECOND
-
-            }
+            //params is EXERCISE_TYPE|AVG_MAG|PULSES_PER_SECOND
         }
     }
